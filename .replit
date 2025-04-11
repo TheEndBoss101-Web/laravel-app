@@ -1,6 +1,7 @@
 run = "php -S 0.0.0.0:8000 -t ."
 
 entrypoint = "index.php"
+modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-22_11"
@@ -12,3 +13,4 @@ deploymentTarget = "cloudrun"
 [[ports]]
 localPort = 8000
 externalPort = 80
+exposeLocalhost = true
