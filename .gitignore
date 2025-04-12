@@ -77,8 +77,11 @@ yarn-error.log
 /.fleet
 /.idea
 /.nova
-/.vscode
+#/.vscode
 /.zed
 
+# Project files
 
+# wtf, it wont add a extension to the ignore list  >:(
+!.vscode/extensions.json
 !/.vscode/extensions.json
