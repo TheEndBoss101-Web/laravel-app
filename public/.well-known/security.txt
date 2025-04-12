@@ -1,0 +1,17 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: mailto:theendboss101@theendboss101.com
+Contact: mailto:theendboss101@gmail.com
+Contact: https://www.theendboss101.com/contact
+Expires: 2026-01-01T18:00:00.000Z
+Encryption: https://www.theendboss101.com/.well-known/TheEndBoss101_0xB794E59139E574CA_public.asc
+Preferred-Languages: en-us
+Canonical: https://www.theendboss101.com/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQTG5YXeUY/3VflpBDK3lOWROeV0ygUCZ/nN6wAKCRC3lOWROeV0
+yoniAP9Hiw55UhdZ5s9bbmLe2VekVKpGHxnO0XdPUciV7Hk3qQEAgm7I+Q/JF6mI
+HHLwwDKflfxCE9G4HaD1LyTiZihCDgE=
+=OtAM
+-----END PGP SIGNATURE-----

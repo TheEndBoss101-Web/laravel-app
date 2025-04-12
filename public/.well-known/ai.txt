@@ -75,3 +75,11 @@ User-agent: omgilibot
 Disallow: /
 # ---------------------------
 # END AI BLOCK
+
+# START AI BLOCK (ALT)
+# ---------------------------
+User-Agent: *
+Disallow: /
+Disallow: *
+# ---------------------------
+# END AI BLOCK (ALT)
