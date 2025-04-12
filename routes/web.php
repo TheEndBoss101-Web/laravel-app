@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+Route::fallback(function () {
+    abort(404);
+});
+
 Route::get('/', function () {
     return Inertia::render('home');
 })->name('home');
@@ -13,18 +17,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
+require __DIR__.'/web/settings.php';
+require __DIR__.'/web/auth.php';
 
-Route::get('demos/laravel', function () {
-    return Inertia::render('demos/laravel');
-})->name('demos/laravel');
-
-Route::get('demos/react', function () {
-    return Inertia::render('demos/react');
-})->name('demos/react');
-
-Route::get('/errors/{code}', function ($code) {
-    abort($code);
-})->where('code', '[1-5][0-9]{2}');
-
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+if (App::environment('local')) {
+    require __DIR__.'/web/debug/demos.php';
+    require __DIR__.'/web/debug/errors.php';
+}
