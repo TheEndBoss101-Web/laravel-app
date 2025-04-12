@@ -37,7 +37,7 @@ jobs:
         run: npm ci
 
       - name: Build Assets
-        run: npm run build
+        run: npm run build:maps
 
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
