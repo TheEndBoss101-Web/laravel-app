@@ -4,8 +4,16 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('welcome');
+    return Inertia::render('home');
 })->name('home');
+
+Route::get('demos/laravel', function () {
+    return Inertia::render('demos/laravel');
+})->name('demos/laravel');
+
+Route::get('demos/react', function () {
+    return Inertia::render('demos/react');
+})->name('demos/react');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {

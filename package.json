@@ -3,7 +3,9 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
+        "build:maps": "vite build --sourcemap",
         "build:ssr": "vite build && vite build --ssr",
+        "build:maps:ssr": "vite build && vite build --sourcemap --ssr",
         "dev": "vite",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
