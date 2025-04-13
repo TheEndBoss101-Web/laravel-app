@@ -3,9 +3,13 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
+        "build:dev": "vite build --mode development",
         "build:maps": "vite build --sourcemap",
+        "build:dev:maps": "vite build --sourcemap --mode development",
         "build:ssr": "vite build && vite build --ssr",
+        "build:dev:ssr": "vite build --mode development && vite build --mode development --ssr",
         "build:maps:ssr": "vite build && vite build --sourcemap --ssr",
+        "build:dev:maps:ssr": "vite build --sourcemap --mode development && vite build --sourcemap --mode development --ssr",
         "dev": "vite",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
