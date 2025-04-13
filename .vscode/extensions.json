@@ -1,3 +1,10 @@
 {
-    "recommendations": ["aaron-bond.better-comments", "alefragnani.bookmarks", "hediet.vscode-drawio", "eamodio.gitlens", "esbenp.prettier-vscode"]
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "alefragnani.bookmarks",
+        "hediet.vscode-drawio",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+    ]
 }
