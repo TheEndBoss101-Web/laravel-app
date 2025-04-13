@@ -25,6 +25,8 @@ require __DIR__.'/web/auth.php';
 if (env('APP_BLOG_ENABLED', false)) {
     require __DIR__.'/web/blog/home.php';
     require __DIR__.'/web/blog/article1.php';
+    require __DIR__.'/web/blog/formattest.php';
+    require __DIR__.'/web/blog/markdowntest.php';
 }
 
 // Enable debug routes only if the environment is local
