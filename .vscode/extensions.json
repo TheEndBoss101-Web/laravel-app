@@ -5,6 +5,7 @@
         "hediet.vscode-drawio",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "yy0931.vscode-sqlite3-editor"
     ]
 }
