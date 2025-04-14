@@ -2,8 +2,8 @@ composer.phar
 /vendor/
 /vendor/*
 /bootstrap/ssr
-!.vscode/extensions.json
-!/.vscode/extensions.json
+#!.vscode/extensions.json
+#!/.vscode/extensions.json
 /.phpunit.cache
 /node_modules
 /public/build
@@ -25,5 +25,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.nova
-/.vscode
+#/.vscode
 /.zed
