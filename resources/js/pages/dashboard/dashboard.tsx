@@ -5,7 +5,7 @@ import { Head } from '@inertiajs/react';
 import { ChartAreaInteractive } from '@/components/demo-chart-area-interactive';
 import { DataTable } from '@/components/demo-data-table';
 import { SectionCards } from '@/components/demo-section-cards';
-import data from '../../assets/data.json';
+import data from '../../../assets/data.json';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
