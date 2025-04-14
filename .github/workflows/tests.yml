@@ -34,7 +34,7 @@ jobs:
           cache: 'npm'
 
       - name: Setup Yarn
-        uses: actions/setup-yarn@v3
+        uses: mskelton/setup-yarn@v3
         with:
           node-version: '22'
           cache: 'npm'
