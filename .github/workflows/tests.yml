@@ -46,7 +46,7 @@ jobs:
         run: yarn install
 
       - name: Build Assets
-        run: yarn run build:maps:ssr
+        run: yarn run build:maps
 
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader

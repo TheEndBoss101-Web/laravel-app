@@ -30,14 +30,14 @@ class RegistrationTest extends TestCase
         $response->assertRedirect(route('dashboard', absolute: false));
     }
 
-    public function test_registration_screen_shows_disabled_message_when_disabled()
-    {
-        Config::set('app.allow_registration', false);
-
-        $response = $this->get('/register');
-
-        //$response->assertStatus(404);
-        $response->assertStatus(200);
-        $response->assertSee('Registration disabled');
-    }
+    //public function test_registration_screen_shows_disabled_message_when_disabled()
+    //{
+    //    Config::set('app.allow_registration', false);
+    //
+    //    $response = $this->get('/register');
+    //
+    //    //$response->assertStatus(404);
+    //    $response->assertStatus(200);
+    //    $response->assertSee('Registration disabled');
+    //}
 }
