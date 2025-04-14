@@ -2,7 +2,7 @@ composer.phar
 /vendor/
 /vendor/*
 /bootstrap/ssr
-#!.vscode/extensions.json
+#!.vscode/extensions.json # wtf, it wont add a extension to the ignore list  >:(
 #!/.vscode/extensions.json
 /.phpunit.cache
 /node_modules
