@@ -1,4 +1,5 @@
-import { Head, useForm } from '@inertiajs/react';
+import { type SharedData } from '@/types';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import { LoaderCircle } from 'lucide-react';
 import { FormEventHandler } from 'react';
 
@@ -24,12 +25,27 @@ export default function Register() {
         password_confirmation: '',
     });
 
+    const { allowRegistration } = usePage<SharedData>().props;
+
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
         post(route('register'), {
             onFinish: () => reset('password', 'password_confirmation'),
         });
     };
+
+    if (allowRegistration === false) {
+        return (
+            <AuthLayout title="Registration disabled" description="Registration is currently disabled.">
+                <Head title="Registration disabled" />
+                <div className="text-center">
+                    <TextLink href={route('login')} className="mx-auto block text-sm">
+                        Log in
+                    </TextLink>
+                </div>
+            </AuthLayout>
+        );
+    }
 
     return (
         <AuthLayout title="Create an account" description="Enter your details below to create your account">

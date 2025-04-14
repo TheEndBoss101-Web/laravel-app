@@ -22,7 +22,7 @@ require __DIR__.'/web/settings.php';
 require __DIR__.'/web/auth.php';
 
 // Enable blog routes only if APP_BLOG_ENABLED is true
-if (env('APP_BLOG_ENABLED', false)) {
+if (config('app.blog_enabled')) {
     require __DIR__.'/web/blog/home.php';
     require __DIR__.'/web/blog/article1.php';
     require __DIR__.'/web/blog/formattest.php';
