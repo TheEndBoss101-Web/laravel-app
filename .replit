@@ -3,6 +3,21 @@ run = "composer run dev"
 entrypoint = "./public/index.php"
 modules = ["nodejs-20"]
 
+hidden = [
+    "artisan",
+
+    ".editorconfig",
+    ".gitattributes",
+    ".gitignore",
+    ".styleci.yml",
+
+    "composer.lock",
+    "vendor",
+    "phpunit.xml"
+]
+
+language = "php"
+
 [nix]
 channel = "stable-22_11"
 
@@ -19,3 +34,6 @@ exposeLocalhost = true
 localPort = 8000
 externalPort = 80
 exposeLocalhost = true
+
+[packager]
+language = "php"
