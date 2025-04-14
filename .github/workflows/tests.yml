@@ -33,11 +33,17 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
+      - name: Setup Yarn
+        uses: actions/setup-yarn@v3
+        with:
+          node-version: '22'
+          cache: 'npm'
+
       - name: Install Node Dependencies
-        run: npm ci
+        run: yarn ci
 
       - name: Build Assets
-        run: npm run build:maps
+        run: yarn run build:maps
 
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
