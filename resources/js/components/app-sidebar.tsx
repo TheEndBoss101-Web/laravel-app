@@ -7,26 +7,28 @@ import { Link } from '@inertiajs/react';
 import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
 import AppLogo from './app-logo';
 
-const mainNavItems: NavItem[] = [
-    {
-        title: 'Dashboard',
-        href: '/dashboard',
-        icon: LayoutGrid,
-    },
-];
+import { mainNavItems, footerNavItems } from '@/constants/navItems';
 
-const footerNavItems: NavItem[] = [
-    {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits',
-        icon: BookOpen,
-    },
-];
+//const mainNavItems: NavItem[] = [
+//    {
+//        title: 'Dashboard',
+//        href: '/dashboard',
+//        icon: LayoutGrid,
+//    },
+//];
+//
+//const footerNavItems: NavItem[] = [
+//    {
+//        title: 'Repository',
+//        href: 'https://github.com/laravel/react-starter-kit',
+//        icon: Folder,
+//    },
+//    {
+//        title: 'Documentation',
+//        href: 'https://laravel.com/docs/starter-kits',
+//        icon: BookOpen,
+//    },
+//];
 
 export function AppSidebar() {
     return (
