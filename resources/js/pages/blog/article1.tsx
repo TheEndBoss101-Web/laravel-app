@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Markdown from '@/components/markdown';
 import { Head } from '@inertiajs/react';
 

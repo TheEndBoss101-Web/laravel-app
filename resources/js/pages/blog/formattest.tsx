@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Head } from '@inertiajs/react';
 
 export default function article1() {

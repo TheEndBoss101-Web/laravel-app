@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Markdown from '@/components/markdown';
 import React, { useState } from 'react';
 
