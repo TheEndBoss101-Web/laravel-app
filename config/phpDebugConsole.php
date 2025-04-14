@@ -4,7 +4,7 @@ use Illuminate\Support\Env;
 
 return array(
 
-    'key' => Env::get('PHPDEBUGCONSOLE_KEY', \substr(\md5(\uniqid(\rand(), true)), 0, 10)),
+    'key' => Env::get('PHPDEBUGCONSOLE_KEY', \substr(\md5(\uniqid(\random_int(), true)), 0, 10)),
 
     /*
         Laravel specific
