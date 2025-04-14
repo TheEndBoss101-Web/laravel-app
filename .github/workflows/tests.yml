@@ -41,12 +41,12 @@ jobs:
 
       #- name: Install Node Dependencies
       #  run: node ci
-      
+
       - name: Install yarn Dependencies
         run: yarn install
 
       - name: Build Assets
-        run: yarn run build:maps
+        run: yarn run build:maps:ssr
 
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
