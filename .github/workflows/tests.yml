@@ -39,8 +39,11 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - name: Install Node Dependencies
-        run: yarn ci
+      #- name: Install Node Dependencies
+      #  run: node ci
+      
+      - name: Install yarn Dependencies
+        run: yarn install
 
       - name: Build Assets
         run: yarn run build:maps
