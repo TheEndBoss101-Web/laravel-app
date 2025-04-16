@@ -15,8 +15,9 @@ class PostController extends Controller
    */
   public function index()
   {
-    //$posts = Post::all();
-    //return view('posts.index', compact('posts'));
+    return Inertia::render('post/index', [
+            'posts' => Post::latest()->paginate(10),
+        ]);
   }
 
   /**
@@ -33,8 +34,8 @@ class PostController extends Controller
       'body' => 'required',
     ]);
     Post::create($request->all());
-    //return redirect()->route('posts.index')
-    //  ->with('success', 'Post created successfully.');
+    return redirect()->route('posts.index')
+      ->with('status', 'Post created successfully.');
   }
 
   /**
@@ -53,8 +54,8 @@ class PostController extends Controller
     ]);
     $post = Post::find($id);
     $post->update($request->all());
-    //return redirect()->route('posts.index')
-    //  ->with('success', 'Post updated successfully.');
+    return redirect()->route('posts.index')
+      ->with('status', 'Post updated successfully.');
   }
 
   /**
@@ -67,8 +68,8 @@ class PostController extends Controller
   {
     $post = Post::find($id);
     $post->delete();
-    //return redirect()->route('posts.index')
-    //  ->with('success', 'Post deleted successfully');
+    return redirect()->route('posts.index')
+      ->with('status', 'Post deleted successfully');
   }
 
   // routes functions
@@ -88,10 +89,12 @@ class PostController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function show($id)
+  public function show(Post $Post)
   {
-    //$post = Post::find($id);
-    //return view('posts.show', compact('post'));
+        return Inertia::render('post/show', [
+            'post' => $Post,
+            'html' => $Post->html,
+        ]);
   }
 
   /**

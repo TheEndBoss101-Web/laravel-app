@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Env;
 use Inertia\Inertia;
 
+use App\Http\Controllers\PostController;
+
 Route::fallback(function () {
     abort(404);
 });
@@ -24,3 +26,5 @@ if (config('app.blog_enabled')) {
     require __DIR__.'/web/blog/formattest.php';
     require __DIR__.'/web/blog/markdowntest.php';
 }
+
+Route::resource('posts', PostController::class);
