@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -28,12 +30,22 @@ class PostController extends Controller
    */
   public function store(Request $request)
   {
+    if (Auth::check() == false) {
+      return redirect()->route('login')
+        ->with('status', 'You must be logged in to create a post.');
+    }
+
     $request->validate([
       'title' => 'required|max:255',
-      'summary' => 'optional|max:255',
+      'summary' => 'required|max:255',
       'body' => 'required',
     ]);
-    Post::create($request->all());
+    Post::create([
+        'user_id' => Auth::id(), // or auth()->id()
+        'title' => $request->title,
+        'summary' => $request->summary,
+        'body' => $request->body,
+    ]);
     return redirect()->route('posts.index')
       ->with('status', 'Post created successfully.');
   }
@@ -49,7 +61,7 @@ class PostController extends Controller
   {
     $request->validate([
       'title' => 'required|max:255',
-      'summary' => 'optional|max:255',
+      'summary' => 'required|max:255',
       'body' => 'required',
     ]);
     $post = Post::find($id);
@@ -80,13 +92,13 @@ class PostController extends Controller
    */
   public function create()
   {
+    return Inertia::render('post/create');
     //return view('posts.create');
   }
 
   /**
    * Display the specified resource.
    *
-   * @param  int  $id
    * @return \Illuminate\Http\Response
    */
   public function show(Post $Post)
@@ -103,8 +115,11 @@ class PostController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id)
+  public function edit(Post $Post)
   {
+    return Inertia::render('post/edit', [
+      'post' => $Post,
+    ]);
     //$post = Post::find($id);
     //return view('posts.edit', compact('post'));
   }
