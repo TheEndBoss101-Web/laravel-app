@@ -30,7 +30,7 @@ export default function article1({ post, html }: PostProps) {
                                     </li>
                                 ))}
                             </ul>
-                            <div dangerouslySetInnerHTML={{ __html: html }} />
+                            <div dangerouslySetInnerHTML={{ __html: html }} className="prose prose-neutral dark:prose-invert" />
                         </div>
                     </main>
                 </div>

@@ -11,6 +11,8 @@ import {
 } from '@/components/ui/pagination';
 import { Head } from '@inertiajs/react';
 
+import { PostTable } from '@/components/posts-table';
+
 interface PostsProps {
     posts?: object;
     status?: string;
@@ -38,6 +40,9 @@ export default function article1({ posts }: PostsProps) {
                                     </li>
                                 ))}
                             </ul>
+
+                            <PostTable posts={posts}></PostTable>
+
                             <Pagination>
                                 <PaginationContent>
                                     <PaginationItem>
