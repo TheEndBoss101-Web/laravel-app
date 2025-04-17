@@ -31,10 +31,10 @@ require __DIR__.'/webRoutes/development/index.php';
 
 // Enable blog routes only if APP_BLOG_ENABLED is true
 if (config('app.blog_enabled')) {
-    require __DIR__.'/web/blog/home.php';
-    require __DIR__.'/web/blog/article1.php';
-    require __DIR__.'/web/blog/formattest.php';
-    require __DIR__.'/web/blog/markdowntest.php';
+    require __DIR__.'/webRoutes/blog/home.php';
+    require __DIR__.'/webRoutes/blog/article1.php';
+    require __DIR__.'/webRoutes/blog/formattest.php';
+    require __DIR__.'/webRoutes/blog/markdowntest.php';
 }
 
 Route::resource('posts', PostController::class);
