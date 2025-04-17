@@ -24,17 +24,8 @@ Route::get('/', function () {
     return Inertia::render('home');
 })->name('home');
 
-require __DIR__.'/webRoutes/dashboard/index.php';
-require __DIR__.'/webRoutes/settings.php';
-require __DIR__.'/webRoutes/auth.php';
-require __DIR__.'/webRoutes/development/index.php';
-
-// Enable blog routes only if APP_BLOG_ENABLED is true
-if (config('app.blog_enabled')) {
-    require __DIR__.'/webRoutes/blog/home.php';
-    require __DIR__.'/webRoutes/blog/article1.php';
-    require __DIR__.'/webRoutes/blog/formattest.php';
-    require __DIR__.'/webRoutes/blog/markdowntest.php';
-}
-
-Route::resource('posts', PostController::class);
+require __DIR__.'/web/settings.php';
+require __DIR__.'/web/auth.php';
+require __DIR__.'/web/posts.php';
+require __DIR__.'/web/dashboard.php';
+require __DIR__.'/web/dev.php';
