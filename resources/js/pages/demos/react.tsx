@@ -1,4 +1,3 @@
-//import { type SharedData } from '@/types';
 import { Head } from '@inertiajs/react';
 import logo from '../../../assets/images/react.svg';
 import '../../../css/demos/react.css';

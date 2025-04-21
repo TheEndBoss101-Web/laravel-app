@@ -30,7 +30,7 @@ class PostController extends Controller
    */
   public function store(Request $request)
   {
-    if (Auth::check() == false) {
+    if (!Auth::check()) {
       return redirect()->route('login')
         ->with('status', 'You must be logged in to create a post.');
     }
@@ -93,7 +93,6 @@ class PostController extends Controller
   public function create()
   {
     return Inertia::render('post/create');
-    //return view('posts.create');
   }
 
   /**
@@ -101,11 +100,11 @@ class PostController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function show(Post $Post)
+  public function show(Post $post)
   {
         return Inertia::render('post/show', [
-            'post' => $Post,
-            'html' => $Post->html,
+            'post' => $post,
+            'html' => $post->html,
         ]);
   }
 
@@ -115,12 +114,10 @@ class PostController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit(Post $Post)
+  public function edit(Post $post)
   {
     return Inertia::render('post/edit', [
-      'post' => $Post,
+      'post' => $post,
     ]);
-    //$post = Post::find($id);
-    //return view('posts.edit', compact('post'));
   }
 }
